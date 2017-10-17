@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+	  <title>ChinaDebt</title>
+	  <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	
+	</head>
+	<body>
+
+
+<div id="container"></div>
+<script>
+Highcharts.chart('container', {
+
+    title: {
+        text: 'China national debt'
+    },
+
+    subtitle: {
+        text: 'Source: International Monetary Fund'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Percent of GDP'
+        }
+    },
+    /*legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },*/
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2012
+        }
+    },
+
+   series: [{
+        name: 'Percent of GDP',
+        data: [178.7, 190.3, 200.7, 215.8, 236.4, 251, 262.1, 272, 281.3, 289.6, 296.7]
+	
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>	
+	</body>
+  </html>
